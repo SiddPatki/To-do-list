@@ -1,0 +1,23 @@
+<%- include('header'); -%>
+
+<div class="box" id="heading">
+  <h1 style="font-family: 'Sacramento', cursive;padding-bottom: 0;"><%= dayOfWeek %></h1>
+  <h1 style="padding-top: 0;"><%= listTitle %> To Do:</h1>
+</div>
+<div class="box">
+  <% for( let index = 0; index < newItems.length; index++ ) { %>
+  <div class="item">
+    <input type="checkbox" />
+    <p><%= newItems[index] %></p>
+  </div>
+  <% } %>
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="newTodo" placeholder="Enter new task" autofocus autocomplete="off"
+      autocapitalize="characters" required />
+    <button type="submit" name="typeOfList" value=<%= listTitle %>>+</button>
+  </form>
+</div>
+
+
+<%- include('footer'); -%>
